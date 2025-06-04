@@ -6,7 +6,7 @@ import pandas as pd
 
 app = FastAPI()
 
-# Carrega o modelo treinado oiiiiiiiiiiiiiiiii
+# Carrega o modelo treinado 
 model = joblib.load("model.joblib")
 
 # Exemplo de campos esperados - substitua pelos reais conforme seu modelo
@@ -39,6 +39,3 @@ def predict(data: ModelInput):
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-         # testeee # 
-        
