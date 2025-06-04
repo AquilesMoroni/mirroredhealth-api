@@ -6,7 +6,7 @@ import pandas as pd
 
 app = FastAPI()
 
-# Carrega o modelo treinado
+# Carrega o modelo treinado c
 model = joblib.load("model.joblib")
 
 # Exemplo de campos esperados - substitua pelos reais conforme seu modelo
