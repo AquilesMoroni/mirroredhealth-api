@@ -17,7 +17,7 @@ class ModelInput(BaseModel):
     Daily_usages: int
     Performance_impact: int
     Usage_distraction: int
-    Attention_span: int
+    Attention_span: int 
     Useful_features: int
     Beneficial_subject: int
     Usage_symptoms: int
