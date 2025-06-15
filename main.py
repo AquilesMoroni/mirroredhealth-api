@@ -85,7 +85,11 @@ def predict(data: ModelInput):
         input_df = input_df[model_columns]
         print("DataFrame para predição:", input_df)
         prediction = model.predict(input_df)
-        return {"health_risk_prediction": int(prediction[0])}
+        probability = model.predict_proba(input_df)[0][1]  # Probabilidade da classe "afetado"
+        return {
+            "health_risk_prediction": int(prediction[0]),
+            "probability": round(float(probability) * 100, 2)  # porcentagem
+        }
     except Exception as e:
         print("Erro:", e)
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) 
